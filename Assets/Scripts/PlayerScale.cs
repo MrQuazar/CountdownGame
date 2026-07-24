@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerScale : MonoBehaviour
 {
     [Header("Scale Stages")]
-    public float[] scaleStages = { 0.5f, 0.75f, 1f, 1.5f, 2f };
-    public int startStageIndex = 2;
-
+    // Index 0 = Small, 1 = Normal, 2 = Large
+    public float[] scaleStages = { 0.5f, 1f, 2f };
+    public int startStageIndex = 1;
+    public enum ScaleStage { Small = 0, Normal = 1, Large = 2 }
+    public ScaleStage CurrentScaleStage => (ScaleStage)currentStage;
+    
     [Header("Collision Check")]
     public LayerMask obstacleLayer;
     public float headCheckPadding = 0.02f;
