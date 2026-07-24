@@ -4,8 +4,8 @@ public class JumpPad : MonoBehaviour
 {
     [Header("Launch Settings")]
     public float launchForce = 20f;
-    public bool useCustomDirection = false;
-    public Vector2 launchDirection = Vector2.up;
+    public bool launchAlongTransformUp = false; // false = always straight up, true = perpendicular to pad's rotation
+
     [Header("Detection")]
     public LayerMask playerLayer;
 
@@ -30,15 +30,29 @@ public class JumpPad : MonoBehaviour
         Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
         if (rb == null) return;
 
-        Vector2 direction = useCustomDirection ? launchDirection.normalized : Vector2.up;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-        rb.AddForce(direction * launchForce, ForceMode2D.Impulse);
+        Vector2 direction = launchAlongTransformUp ? (Vector2)transform.up : Vector2.up;
+        Vector2 launchVelocity = direction * launchForce;
 
         PlayerController2D playerController = obj.GetComponent<PlayerController2D>();
         if (playerController != null)
+        {
+            playerController.Launch(launchVelocity);
             playerController.ResetJumps();
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.AddForce(launchVelocity, ForceMode2D.Impulse);
+        }
 
         if (animator != null)
             animator.SetTrigger(triggerName);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Vector2 dir = launchAlongTransformUp ? (Vector2)transform.up : Vector2.up;
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)dir * 1.5f);
     }
 }

@@ -3,6 +3,9 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
+    [Header("UI")]
+    public GameObject loseScreen;
+
     [Header("Timer Settings")]
     public float startMinutes = 2f;
 
@@ -11,8 +14,8 @@ public class GameTimer : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     [Header("Multiplier Per Stage")]
-    [Tooltip("Must match the length of scaleStages on PlayerScale. Index 0 = slowest (smallest), last index = fastest (biggest).")]
-    public float[] speedMultipliers = { 0.5f, 0.75f, 1f, 1.5f, 2f };
+    [Tooltip("Index 0 = Small, 1 = Normal, 2 = Large. Must match PlayerScale's scaleStages length.")]
+    public float[] speedMultipliers = { 0.5f, 1f, 2f };
 
     private float timeRemaining;
     private bool timerRunning = true;
@@ -48,15 +51,16 @@ public class GameTimer : MonoBehaviour
 
     void UpdateDisplay()
     {
-        int minutes = Mathf.FloorToInt(timeRemaining / 60f);
-        int seconds = Mathf.FloorToInt(timeRemaining % 60f);
+        int seconds = Mathf.FloorToInt(timeRemaining);
+        int milliseconds = Mathf.FloorToInt((timeRemaining - seconds) * 1000f);
         if (timerText != null)
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = string.Format("{0:00}:{1:000}", seconds, milliseconds);
     }
 
     void OnTimerEnd()
     {
         Debug.Log("Time's up!");
+        if (loseScreen != null) loseScreen.SetActive(true);
     }
 
     public void StopTimer() => timerRunning = false;

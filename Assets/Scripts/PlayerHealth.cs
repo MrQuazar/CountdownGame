@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("UI")]
+    public GameObject loseScreen;
+
     [Header("Health")]
     public int maxHealth = 5;
     private int currentHealth;
@@ -12,10 +15,14 @@ public class PlayerHealth : MonoBehaviour
     public float knockbackDuration = 0.2f;
     public float invincibilityDuration = 0.8f;
 
+    [Header("Death")]
+    public string deathTriggerName = "Death";
+
     private Rigidbody2D rb;
     private Animator animator;
     private bool isInvincible = false;
     private bool isKnockedBack = false;
+    private bool isDead = false;
 
     void Awake()
     {
@@ -26,9 +33,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount, Vector2 sourcePosition)
     {
-        if (isInvincible) return;
+        if (isInvincible || isDead) return;
 
-        currentHealth -= amount;
+        PlayerController2D controller = GetComponent<PlayerController2D>();
+        float multiplier = controller != null ? controller.DamageTakenMultiplier : 1f;
+        int scaledAmount = Mathf.Max(1, Mathf.RoundToInt(amount * multiplier));
+
+        currentHealth -= scaledAmount;
         ApplyKnockback(sourcePosition);
         StartCoroutine(InvincibilityFlash());
 
@@ -50,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public bool IsKnockedBack => isKnockedBack;
+    public bool IsDead => isDead;
 
     System.Collections.IEnumerator InvincibilityFlash()
     {
@@ -73,7 +85,36 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
+        isDead = true;
+
+        CancelInvoke(nameof(EndKnockback));
+        StopAllCoroutines();
+        isKnockedBack = false;
+        isInvincible = false;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.color = Color.white;
+
+        if (animator != null)
+            animator.SetTrigger(deathTriggerName);
+
+        rb.linearVelocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        DisablePlayerControl();
+
         Debug.Log("Player died!");
+        if (loseScreen != null) loseScreen.SetActive(true);
+    }
+
+    void DisablePlayerControl()
+    {
+        PlayerController2D controller = GetComponent<PlayerController2D>();
+        if (controller != null) controller.enabled = false;
+
+        PlayerScale scale = GetComponent<PlayerScale>();
+        if (scale != null) scale.enabled = false;
     }
 
     public int CurrentHealth => currentHealth;
