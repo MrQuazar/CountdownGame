@@ -109,6 +109,7 @@ public class AudioManager : MonoBehaviour
 
     void Reset()
     {
+        // Convenience: pre-populate one row per SFXType so you just drop clips in.
         sfxLibrary.Clear();
         foreach (SFXType type in System.Enum.GetValues(typeof(SFXType)))
         {
@@ -118,6 +119,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+        // Keep any active looping sources in sync with live volume/enabled changes.
         for (int i = loopSources.Count - 1; i >= 0; i--)
         {
             AudioSource src = loopSources[i];
@@ -191,6 +193,8 @@ public class AudioManager : MonoBehaviour
         return entry.clips[Random.Range(0, entry.clips.Length)];
     }
 
+    // ---------------- One-shot SFX ----------------
+
     /// <summary>Plays a one-shot sound. Pass overrideClip to use a specific clip instead of a random one from the library entry.</summary>
     public void PlaySFX(SFXType type, Vector3? position = null, AudioClip overrideClip = null)
     {
@@ -213,6 +217,8 @@ public class AudioManager : MonoBehaviour
         SFXEntry entry = GetEntry(type);
         return entry != null && entry.enabled;
     }
+
+    // ---------------- Looping SFX ----------------
 
     /// <summary>Starts (or keeps playing) a looping sound on the given AudioSource. Safe to call every frame.</summary>
     public void StartLoopSFX(AudioSource source, SFXType type)
@@ -259,6 +265,7 @@ public class AudioManager : MonoBehaviour
         loopSources.Remove(source);
     }
 
+    // ---------------- Music ----------------
 
     public void PlayMainMenuMusic()
     {

@@ -3,11 +3,13 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
+    public static GameTimer Instance { get; private set; }
+
     [Header("UI")]
     public GameObject loseScreen;
 
     [Header("Timer Settings")]
-    public float startMinutes = 2f;
+    public float startSeconds = 2f;
 
     [Header("References")]
     public PlayerScale playerScale;
@@ -20,9 +22,22 @@ public class GameTimer : MonoBehaviour
     private float timeRemaining;
     private bool timerRunning = true;
 
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
-        timeRemaining = startMinutes * 60f;
+        timeRemaining = startSeconds;
+        UpdateDisplay();
+    }
+
+    /// <summary>Adds bonus seconds to the clock (e.g. from a collectible). No-op once time has run out.</summary>
+    public void AddTime(float seconds)
+    {
+        if (!timerRunning) return;
+        timeRemaining += seconds;
         UpdateDisplay();
     }
 
