@@ -39,6 +39,7 @@ public class AggressiveEnemy : MonoBehaviour
     private float attackCooldownTimer = 0f;
     private bool isAggro = false;
     private Coroutine attackVisualRoutine;
+    private AudioSource moveLoopSource;
 
     void Awake()
     {
@@ -49,6 +50,10 @@ public class AggressiveEnemy : MonoBehaviour
 
         if (attackVisual != null)
             attackVisual.enabled = false;
+
+        moveLoopSource = gameObject.AddComponent<AudioSource>();
+        moveLoopSource.playOnAwake = false;
+        moveLoopSource.spatialBlend = 0f;
     }
 
     void Update()
@@ -67,11 +72,16 @@ public class AggressiveEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (health != null && (health.IsKnockedBack || health.IsDead)) return;
+        if (health != null && (health.IsKnockedBack || health.IsDead))
+        {
+            AudioManager.Instance?.StopLoopSFX(moveLoopSource);
+            return;
+        }
 
         if (waitingToDeAggro)
         {
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            AudioManager.Instance?.StopLoopSFX(moveLoopSource);
             return;
         }
 
@@ -83,6 +93,11 @@ public class AggressiveEnemy : MonoBehaviour
         {
             Patrol();
         }
+
+        if (Mathf.Abs(rb.linearVelocity.x) > 0.05f)
+            AudioManager.Instance?.StartLoopSFX(moveLoopSource, isAggro ? SFXType.ChasingEnemyChaseMove : SFXType.ChasingEnemyPatrolMove);
+        else
+            AudioManager.Instance?.StopLoopSFX(moveLoopSource);
     }
 
     void CheckAggro()
@@ -140,7 +155,7 @@ public class AggressiveEnemy : MonoBehaviour
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
 
         UpdateFacing(direction.x);
-        if (Vector2.Distance(transform.position, currentPatrolTarget.position) < 0.2f)
+        if (Vector2.Distance(transform.position, currentPatrolTarget.position) < 0.5f)
         {
             currentPatrolTarget = currentPatrolTarget == pointA ? pointB : pointA;
         }
@@ -178,6 +193,7 @@ public class AggressiveEnemy : MonoBehaviour
     {
         attackCooldownTimer = attackRate;
         if (animator != null) animator.SetTrigger("Attack");
+        AudioManager.Instance?.PlaySFX(SFXType.ChasingEnemyAttack, transform.position);
 
         ShowAttackVisual();
 

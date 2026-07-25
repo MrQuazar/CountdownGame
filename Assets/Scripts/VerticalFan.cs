@@ -12,10 +12,25 @@ public class VerticalFan : MonoBehaviour
     public bool showGizmo = true;
 
     private BoxCollider2D zone;
+    private AudioSource humSource;
 
     void Awake()
     {
         zone = GetComponent<BoxCollider2D>();
+
+        humSource = gameObject.AddComponent<AudioSource>();
+        humSource.playOnAwake = false;
+        humSource.spatialBlend = 0f;
+    }
+
+    void OnEnable()
+    {
+        AudioManager.Instance?.StartLoopSFX(humSource, SFXType.VerticalFan);
+    }
+
+    void OnDisable()
+    {
+        AudioManager.Instance?.StopLoopSFX(humSource);
     }
 
     void Reset()
@@ -47,6 +62,8 @@ public class VerticalFan : MonoBehaviour
             case PlayerScale.ScaleStage.Large:
                 if (largeFallAssist > 0f)
                     rb.linearVelocity += Vector2.down * largeFallAssist * Time.fixedDeltaTime;
+                else if (largeFallAssist < 0f)
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
                 break;
         }
     }

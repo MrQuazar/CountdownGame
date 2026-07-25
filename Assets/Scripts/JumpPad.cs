@@ -47,6 +47,8 @@ public class JumpPad : MonoBehaviour
 
         if (animator != null)
             animator.SetTrigger(triggerName);
+
+        AudioManager.Instance?.PlaySFX(SFXType.JumpPadLaunch, transform.position);
     }
 
     void OnDrawGizmosSelected()

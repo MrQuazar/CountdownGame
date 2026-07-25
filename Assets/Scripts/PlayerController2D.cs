@@ -32,6 +32,8 @@ public class PlayerController2D : MonoBehaviour
     public int[] attackDamages = { 1, 1, 2 };
     public LayerMask enemyLayer;
     private int AttackDamage => attackDamages[Mathf.Clamp((int)playerScale.CurrentScaleStage, 0, attackDamages.Length - 1)];
+    private float CurrentScaleFactor => playerScale.scaleStages[Mathf.Clamp(playerScale.CurrentStage, 0, playerScale.scaleStages.Length - 1)];
+    private float EffectiveAttackRange => attackRange * CurrentScaleFactor;
 
     [Header("Attack Visual")]
     public SpriteRenderer attackVisual;
@@ -70,6 +72,8 @@ public class PlayerController2D : MonoBehaviour
     private float attackCooldownTimer = 0f;
     private Coroutine attackVisualRoutine;
 
+    private AudioSource moveLoopSource;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -78,6 +82,10 @@ public class PlayerController2D : MonoBehaviour
         // Make sure the visual starts hidden.
         if (attackVisual != null)
             attackVisual.enabled = false;
+
+        moveLoopSource = gameObject.AddComponent<AudioSource>();
+        moveLoopSource.playOnAwake = false;
+        moveLoopSource.spatialBlend = 0f;
     }
 
     void Update()
@@ -115,6 +123,7 @@ public class PlayerController2D : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
                 jumpsUsed++;
                 justJumped = true;
+                AudioManager.Instance?.PlaySFX(SFXType.Jump, transform.position);
             }
         }
         dashCooldownTimer -= Time.deltaTime;
@@ -154,6 +163,12 @@ public class PlayerController2D : MonoBehaviour
         bool isRunning = (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && isGrounded;
         animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsGrounded", isGrounded);
+
+        if (AudioManager.Instance != null)
+        {
+            if (isRunning) AudioManager.Instance.StartLoopSFX(moveLoopSource, SFXType.Move);
+            else AudioManager.Instance.StopLoopSFX(moveLoopSource);
+        }
     }
 
     void FixedUpdate()
@@ -198,6 +213,7 @@ public class PlayerController2D : MonoBehaviour
         dashCooldownTimer = dashCooldown;
         rb.gravityScale = 0f;
         animator.SetTrigger("Dash");
+        AudioManager.Instance?.PlaySFX(SFXType.Dash, transform.position);
 
         if (!isGrounded)
             airDashUsed = true;
@@ -207,6 +223,14 @@ public class PlayerController2D : MonoBehaviour
     {
         isDashing = false;
         rb.gravityScale = 1f;
+    }
+
+    public void TeleportTo(Vector2 position)
+    {
+        rb.position = position;
+        rb.linearVelocity = Vector2.zero;
+        jumpsUsed = 0;
+        airDashUsed = false;
     }
 
     public void ResetJumps()
@@ -224,10 +248,11 @@ public class PlayerController2D : MonoBehaviour
     {
         attackCooldownTimer = attackCooldown;
         animator.SetTrigger("Attack");
+        AudioManager.Instance?.PlaySFX(SFXType.Attack, transform.position);
 
         ShowAttackVisual();
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, EffectiveAttackRange, enemyLayer);
         foreach (Collider2D enemy in hits)
         {
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
@@ -235,7 +260,6 @@ public class PlayerController2D : MonoBehaviour
                 enemyHealth.TakeDamage(AttackDamage, attackPoint.position);
         }
     }
-
     void ShowAttackVisual()
     {
         if (attackVisual == null) return;
@@ -300,7 +324,7 @@ public class PlayerController2D : MonoBehaviour
         if (attackPoint != null)
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+            Gizmos.DrawWireSphere(attackPoint.position, EffectiveAttackRange);
         }
     }
 }

@@ -14,11 +14,16 @@ public class Pushable : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 lastPlayerPos;
     private bool hasLastPos = false;
+    private AudioSource pushLoopSource;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+
+        pushLoopSource = gameObject.AddComponent<AudioSource>();
+        pushLoopSource.playOnAwake = false;
+        pushLoopSource.spatialBlend = 0f;
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -31,6 +36,7 @@ public class Pushable : MonoBehaviour
         {
             hasLastPos = false;
             SetPushAnim(collision.gameObject, false);
+            AudioManager.Instance?.StopLoopSFX(pushLoopSource);
             return;
         }
 
@@ -60,10 +66,12 @@ public class Pushable : MonoBehaviour
             float deltaX = (playerRb.position.x - lastPlayerPos.x) * multiplier;
             rb.MovePosition(new Vector2(rb.position.x + deltaX, rb.position.y));
             SetPushAnim(collision.gameObject, true);
+            AudioManager.Instance?.StartLoopSFX(pushLoopSource, SFXType.BoxPush);
         }
         else
         {
             SetPushAnim(collision.gameObject, false);
+            AudioManager.Instance?.StopLoopSFX(pushLoopSource);
         }
 
         lastPlayerPos = playerRb.position;
@@ -88,6 +96,7 @@ public class Pushable : MonoBehaviour
             hasLastPos = false;
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             SetPushAnim(collision.gameObject, false);
+            AudioManager.Instance?.StopLoopSFX(pushLoopSource);
         }
     }
 
