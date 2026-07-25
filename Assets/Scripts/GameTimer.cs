@@ -14,6 +14,7 @@ public class GameTimer : MonoBehaviour
 
     [Header("References")]
     public PlayerScale playerScale;
+    public PlayerHealth playerHealth;
     public TextMeshProUGUI timerText;
 
     [Header("Multiplier Per Stage")]
@@ -136,9 +137,9 @@ public class GameTimer : MonoBehaviour
     void OnTimerEnd()
     {
         Debug.Log("Time's up!");
+        if (playerHealth != null) playerHealth.FreezeControl();
         if (loseScreen != null) loseScreen.SetActive(true);
     }
-
     public void StopTimer() => timerRunning = false;
     public void ResumeTimer() => timerRunning = true;
 }

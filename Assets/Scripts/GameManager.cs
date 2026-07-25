@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Win")]
     public GameObject winScreen;
-
+    public PlayerHealth playerHealth;
+    public string nextLevelSceneName;
     private int totalCollectibles;
     private int collectedCount;
 
@@ -77,14 +78,23 @@ public class GameManager : MonoBehaviour
     void OnAllCollected()
     {
         Debug.Log("All collectibles found — goal complete!");
+        GameTimer.Instance?.StopTimer();
+        if (playerHealth != null) playerHealth.FreezeControl();
         if (winScreen != null) winScreen.SetActive(true);
     }
 
     public int CollectedCount => collectedCount;
     public int TotalCollectibles => totalCollectibles;
+
     public void RetryLevel()
     {
-        Time.timeScale = 1f; // in case you paused via timeScale on timeout
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nextLevelSceneName);
     }
 }

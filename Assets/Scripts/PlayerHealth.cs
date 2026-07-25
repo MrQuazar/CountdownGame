@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvincible = false;
     private bool isKnockedBack = false;
     private bool isDead = false;
+    private bool controlFrozen = false;
 
     [Header("Hurt")]
     public string hurtTriggerName = "Hurt";
@@ -36,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount, Vector2 sourcePosition)
     {
-        if (isInvincible || isDead) return;
+        if (isInvincible || isDead || controlFrozen) return;
 
         PlayerController2D controller = GetComponent<PlayerController2D>();
         float multiplier = controller != null ? controller.DamageTakenMultiplier : 1f;
@@ -110,15 +111,27 @@ public class PlayerHealth : MonoBehaviour
         if (animator != null)
             animator.SetTrigger(deathTriggerName);
 
-        rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        DisablePlayerControl();
+        FreezeControl();
+        GameTimer.Instance?.StopTimer();
 
         Debug.Log("Player died!");
         if (loseScreen != null) loseScreen.SetActive(true);
     }
 
+    public void FreezeControl()
+    {
+        controlFrozen = true;
+
+        PlayerController2D controller = GetComponent<PlayerController2D>();
+        if (controller != null) controller.enabled = false;
+
+        PlayerScale scale = GetComponent<PlayerScale>();
+        if (scale != null) scale.enabled = false;
+
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+    }
     void DisablePlayerControl()
     {
         PlayerController2D controller = GetComponent<PlayerController2D>();
