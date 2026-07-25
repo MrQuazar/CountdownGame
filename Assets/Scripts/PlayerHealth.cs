@@ -24,6 +24,9 @@ public class PlayerHealth : MonoBehaviour
     private bool isKnockedBack = false;
     private bool isDead = false;
 
+    [Header("Hurt")]
+    public string hurtTriggerName = "Hurt";
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,7 +47,13 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(InvincibilityFlash());
 
         if (currentHealth <= 0)
+        {
             Die();
+        }
+        else
+        {
+            if (animator != null) animator.SetTrigger(hurtTriggerName);
+        }
     }
 
     void ApplyKnockback(Vector2 sourcePosition)
