@@ -11,6 +11,14 @@ public class Collectible : MonoBehaviour
     [Tooltip("Seconds added to the game timer when this collectible is picked up.")]
     public float timeBonusSeconds = 5f;
 
+    [Header("Spin")]
+    public float rotationSpeed = 240f; // degrees/sec around Z
+
+    void Update()
+    {
+        transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
+    }
+
     void Reset()
     {
         GetComponent<Collider2D>().isTrigger = true;
