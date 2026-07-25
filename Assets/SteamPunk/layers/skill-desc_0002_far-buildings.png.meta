@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 245eb23520a2f654f9c341d4a79d3ee0
+guid: 5ce744bde4eaf92499ccddfb1d4d82da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 936160139937261469
-    second: Steampunk Brick Back_0
+      213: -5855985882106638921
+    second: skill-desc_0002_far-buildings_0
   - first:
-      213: -6863691829923383336
-    second: Steampunk Brick Back_1
+      213: -3524273361831387203
+    second: skill-desc_0002_far-buildings_1
   - first:
-      213: -7533006468418286892
-    second: Steampunk Brick Back_2
+      213: 3227187420720291398
+    second: skill-desc_0002_far-buildings_2
   - first:
-      213: 6812859818799801838
-    second: Steampunk Brick Back_3
+      213: 1146018645288456313
+    second: skill-desc_0002_far-buildings_3
   - first:
-      213: -5667702798962053106
-    second: Steampunk Brick Back_4
-  - first:
-      213: 6542120746697216803
-    second: Steampunk Brick Back_5
-  - first:
-      213: -1245882521773515829
-    second: Steampunk Brick Back_6
+      213: -2101356884792801633
+    second: skill-desc_0002_far-buildings_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,79 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Steampunk Brick Back_0
+      name: skill-desc_0002_far-buildings_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 51
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9727d1ffa8edfc00800000000000000
-      internalID: 936160139937261469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Steampunk Brick Back_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 50
-        width: 44
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d77aa565a44fb0a0800000000000000
-      internalID: -6863691829923383336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Steampunk Brick Back_2
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 34
-        width: 28
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4da453f4782657790800000000000000
-      internalID: -7533006468418286892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Steampunk Brick Back_3
-      rect:
-        serializedVersion: 2
-        x: 95
+        x: 0
         y: 0
-        width: 97
-        height: 64
+        width: 15
+        height: 121
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,64 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee5281cb8e32c8e50800000000000000
-      internalID: 6812859818799801838
+      spriteID: 7bdc457dddb5bbea0800000000000000
+      internalID: -5855985882106638921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Steampunk Brick Back_4
+      name: skill-desc_0002_far-buildings_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 12
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e00316745564851b0800000000000000
-      internalID: -5667702798962053106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Steampunk Brick Back_5
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 2
-        width: 44
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 323d99058284aca50800000000000000
-      internalID: 6542120746697216803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Steampunk Brick Back_6
-      rect:
-        serializedVersion: 2
-        x: 63
+        x: 51
         y: 0
-        width: 34
-        height: 33
+        width: 16
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +149,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcb52d9827cb5bee0800000000000000
-      internalID: -1245882521773515829
+      spriteID: dbf1ba0cc04471fc0800000000000000
+      internalID: -3524273361831387203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill-desc_0002_far-buildings_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 16
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e54ab5cd549cc20800000000000000
+      internalID: 3227187420720291398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill-desc_0002_far-buildings_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 16
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9709462d2e977ef00800000000000000
+      internalID: 1146018645288456313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill-desc_0002_far-buildings_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 15
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f968a97fb0b76d2e0800000000000000
+      internalID: -2101356884792801633
       vertices: []
       indices: 
       edges: []
@@ -285,13 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Steampunk Brick Back_0: 936160139937261469
-      Steampunk Brick Back_1: -6863691829923383336
-      Steampunk Brick Back_2: -7533006468418286892
-      Steampunk Brick Back_3: 6812859818799801838
-      Steampunk Brick Back_4: -5667702798962053106
-      Steampunk Brick Back_5: 6542120746697216803
-      Steampunk Brick Back_6: -1245882521773515829
+      skill-desc_0002_far-buildings_0: -5855985882106638921
+      skill-desc_0002_far-buildings_1: -3524273361831387203
+      skill-desc_0002_far-buildings_2: 3227187420720291398
+      skill-desc_0002_far-buildings_3: 1146018645288456313
+      skill-desc_0002_far-buildings_4: -2101356884792801633
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
