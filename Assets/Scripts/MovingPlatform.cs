@@ -44,6 +44,28 @@ public class MovingPlatform : MonoBehaviour
 
     private float currentAngle = 0f;      // used by Circular
     private float currentRotation = 0f;   // used by Rotate
+    public Vector2 Velocity { get; private set; }
+    private Vector2 previousPosition;
+
+    void FixedUpdate()
+    {
+
+        if (motionFinished)
+        {
+            Velocity = Vector2.zero;
+            return;
+        }
+
+        switch (motionType)
+        {
+            case MotionType.Linear: UpdateLinear(); break;
+            case MotionType.Circular: UpdateCircular(); break;
+            case MotionType.Rotate: UpdateRotate(); break;
+        }
+
+        Velocity = (rb.position - previousPosition) / Time.fixedDeltaTime;
+        previousPosition = rb.position;
+    }
 
     void Awake()
     {
@@ -71,17 +93,6 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (motionFinished) return;
-
-        switch (motionType)
-        {
-            case MotionType.Linear: UpdateLinear(); break;
-            case MotionType.Circular: UpdateCircular(); break;
-            case MotionType.Rotate: UpdateRotate(); break;
-        }
-    }
 
     void UpdateLinear()
     {

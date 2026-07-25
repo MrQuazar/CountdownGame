@@ -52,14 +52,17 @@ public class PlayerController2D : MonoBehaviour
     private bool isLaunching = false;
     private float launchTimer = 0f;
 
+    [Header("Moving Platform")]
+    private MovingPlatform currentPlatform = null;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private float moveInput;
     private Animator animator;
     private float facing = 1f;
 
-    private int jumpsRemaining;
-
+    private int jumpsUsed = 0;
+    private bool justJumped = false;
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
@@ -90,13 +93,29 @@ public class PlayerController2D : MonoBehaviour
 
         if (isGrounded && rb.linearVelocity.y <= 0f)
         {
-            jumpsRemaining = MaxJumps;
+            jumpsUsed = 0;
             airDashUsed = false;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0 && !isDashing)
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
-            jumpsRemaining--;
+            bool canJump = false;
+
+            if (jumpsUsed == 0)
+            {
+                canJump = isGrounded;
+            }
+            else
+            {
+                canJump = jumpsUsed < MaxJumps;
+            }
+
+            if (canJump)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
+                jumpsUsed++;
+                justJumped = true;
+            }
         }
         dashCooldownTimer -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTimer <= 0f && !isDashing
@@ -139,14 +158,27 @@ public class PlayerController2D : MonoBehaviour
     void FixedUpdate()
     {
         if (playerHealth != null && playerHealth.IsKnockedBack) return;
-        if (isLaunching) return;
+
+        Vector2 platformVelocity = (currentPlatform != null && isGrounded) ? currentPlatform.Velocity : Vector2.zero;
+
         if (isDashing)
         {
             rb.linearVelocity = new Vector2(facing * dashSpeed, 0f);
             return;
         }
 
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        float horizontalVelocity = moveInput * moveSpeed + platformVelocity.x;
+
+        if (platformVelocity.y != 0f && !justJumped)
+        {
+            rb.linearVelocity = new Vector2(horizontalVelocity, platformVelocity.y);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(horizontalVelocity, rb.linearVelocity.y);
+        }
+
+        justJumped = false;
 
         if (rb.linearVelocity.y < 0)
         {
@@ -178,9 +210,8 @@ public class PlayerController2D : MonoBehaviour
 
     public void ResetJumps()
     {
-        jumpsRemaining = MaxJumps;
+        jumpsUsed = 0;
     }
-
     public void Launch(Vector2 velocity, float lockDuration = -1f)
     {
         rb.linearVelocity = velocity;
@@ -232,6 +263,32 @@ public class PlayerController2D : MonoBehaviour
         if (attackVisual != null) attackVisual.enabled = false;
     }
 
+    void OnCollisionEnter2D(Collision2D collision) => CheckPlatformContact(collision);
+    void OnCollisionStay2D(Collision2D collision) => CheckPlatformContact(collision);
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        MovingPlatform platform = collision.gameObject.GetComponent<MovingPlatform>();
+        if (platform != null && platform == currentPlatform)
+        {
+            currentPlatform = null;
+        }
+    }
+
+    void CheckPlatformContact(Collision2D collision)
+    {
+        MovingPlatform platform = collision.gameObject.GetComponent<MovingPlatform>();
+        if (platform == null) return;
+
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            if (contact.normal.y == 1)
+            {
+                currentPlatform = platform;
+                return;
+            }
+        }
+    }
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
