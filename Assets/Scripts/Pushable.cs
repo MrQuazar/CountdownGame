@@ -27,9 +27,15 @@ public class Pushable : MonoBehaviour
         PlayerController2D playerController = collision.gameObject.GetComponent<PlayerController2D>();
         if (playerRb == null || playerController == null) return;
 
+        if (!IsSideContact(collision))
+        {
+            hasLastPos = false;
+            SetPushAnim(collision.gameObject, false);
+            return;
+        }
+
         if (!hasLastPos)
         {
-            // First frame of contact — nothing to compare against yet, just record and wait.
             lastPlayerPos = playerRb.position;
             hasLastPos = true;
             return;
@@ -47,7 +53,6 @@ public class Pushable : MonoBehaviour
         float playerMoveDir = Mathf.Sign(playerRb.linearVelocity.x);
         bool isPushingIntoUs = Mathf.Abs(playerRb.linearVelocity.x) > 0.05f && playerMoveDir == sideSign;
 
-        // Always kill velocity — this box never carries its own momentum.
         rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
 
         if (isPushingIntoUs && multiplier > 0f)
@@ -62,6 +67,18 @@ public class Pushable : MonoBehaviour
         }
 
         lastPlayerPos = playerRb.position;
+    }
+
+    bool IsSideContact(Collision2D collision)
+    {
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            if (Mathf.Abs(contact.normal.x) > 0.7f && Mathf.Abs(contact.normal.y) < 0.5f)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     void OnCollisionExit2D(Collision2D collision)
