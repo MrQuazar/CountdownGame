@@ -62,6 +62,8 @@ public class VerticalFan : MonoBehaviour
             case PlayerScale.ScaleStage.Large:
                 if (largeFallAssist > 0f)
                     rb.linearVelocity += Vector2.down * largeFallAssist * Time.fixedDeltaTime;
+                else if (largeFallAssist < 0f)
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
                 break;
         }
     }

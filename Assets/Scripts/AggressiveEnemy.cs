@@ -95,7 +95,7 @@ public class AggressiveEnemy : MonoBehaviour
         }
 
         if (Mathf.Abs(rb.linearVelocity.x) > 0.05f)
-            AudioManager.Instance?.StartLoopSFX(moveLoopSource, SFXType.ChasingEnemyMove);
+            AudioManager.Instance?.StartLoopSFX(moveLoopSource, isAggro ? SFXType.ChasingEnemyChaseMove : SFXType.ChasingEnemyPatrolMove);
         else
             AudioManager.Instance?.StopLoopSFX(moveLoopSource);
     }

@@ -706,6 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectVFX: {fileID: 0}
   collectSFX: {fileID: 0}
+  timeBonusSeconds: 5
 --- !u!61 &455060943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1405,6 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectVFX: {fileID: 0}
   collectSFX: {fileID: 0}
+  timeBonusSeconds: 5
 --- !u!61 &1498793463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1611,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1990936608}
-  startMinutes: 2
+  startSeconds: 2
   playerScale: {fileID: 320849406}
   timerText: {fileID: 1868981904}
   speedMultipliers:
@@ -2560,10 +2562,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3003990145786076635, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.45
-      objectReference: {fileID: 0}
     - target: {fileID: 4041888543591171257, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2608,57 +2606,9 @@ PrefabInstance:
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1990936608}
-    - target: {fileID: 5174088768586176347, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_Size.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174088768586176347, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_Size.y
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174088768586176347, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 184509271508132499, guid: 4b65fd05601b96649bbef77f8c52b0b9, type: 3}
-    - target: {fileID: 5174088768586176347, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063382554812616732, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063382554812616732, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063382554812616732, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063382554812616732, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063382554812616732, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7066563384241853709, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7729574508094022563, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_Size.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7729574508094022563, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_Size.y
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 7729574508094022563, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
