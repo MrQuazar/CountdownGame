@@ -1862,7 +1862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3955017684073373704, guid: e270b445d143a764999f178253a9a954, type: 3}
       propertyPath: damage
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8534327004656138014, guid: e270b445d143a764999f178253a9a954, type: 3}
       propertyPath: m_Name
@@ -3966,7 +3966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177117880194745274, guid: bc257060e5256bd40abfe901736d2a2d, type: 3}
       propertyPath: travelDuration
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5094422432207898027, guid: bc257060e5256bd40abfe901736d2a2d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6444,7 +6444,7 @@ PrefabInstance:
       objectReference: {fileID: 18267529}
     - target: {fileID: 7384586905503253713, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: moveSpeed
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7384586905503253713, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: aggroRange
@@ -6456,7 +6456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200852730319759733, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200852730319759733, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
+      propertyPath: knockbackForce
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8467124863562248203, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: m_Name
@@ -7364,7 +7368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1990936608}
-  startMinutes: 2
+  startSeconds: 180
   playerScale: {fileID: 320849406}
   timerText: {fileID: 1868981904}
   speedMultipliers:
@@ -8551,7 +8555,7 @@ PrefabInstance:
       objectReference: {fileID: 828221502}
     - target: {fileID: 4041888543591171257, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12
+      value: 11.54
       objectReference: {fileID: 0}
     - target: {fileID: 4041888543591171257, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8598,12 +8602,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4261610039767531866, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
+      propertyPath: 'scaleStages.Array.data[0]'
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261610039767531866, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: 'scaleStages.Array.data[1]'
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4261610039767531866, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: 'scaleStages.Array.data[2]'
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4838382402422130196, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: loseScreen
