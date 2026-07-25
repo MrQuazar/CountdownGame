@@ -114,7 +114,7 @@ public class MovingPlatform : MonoBehaviour
             return;
         }
 
-        moveTimer += Time.fixedDeltaTime;
+        moveTimer += Time.fixedDeltaTime * GameManager.MobileSpeedMultiplier;
         float t = Mathf.Clamp01(moveTimer / travelDuration);
 
         Vector2 from = movingToB ? startPoint : endPoint;
@@ -141,7 +141,7 @@ public class MovingPlatform : MonoBehaviour
     void UpdateCircular()
     {
         float dir = direction == RotationDirection.Clockwise ? -1f : 1f;
-        currentAngle += dir * circleSpeed * Time.fixedDeltaTime;
+        currentAngle += dir * circleSpeed * GameManager.MobileSpeedMultiplier * Time.fixedDeltaTime;
 
         if (currentAngle >= 360f || currentAngle <= -360f)
         {
@@ -160,7 +160,7 @@ public class MovingPlatform : MonoBehaviour
     void UpdateRotate()
     {
         float dir = rotateDirection == RotationDirection.Clockwise ? -1f : 1f;
-        float delta = dir * rotateSpeed * Time.fixedDeltaTime;
+        float delta = dir * rotateSpeed * GameManager.MobileSpeedMultiplier * Time.fixedDeltaTime;
         currentRotation += delta;
 
         if (currentRotation >= 360f || currentRotation <= -360f)

@@ -78,18 +78,19 @@ public class PlayerHealth : MonoBehaviour
         isInvincible = true;
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Color baseColor = sr != null ? sr.color : Color.white;
         float flashTimer = 0f;
         bool visible = true;
 
         while (flashTimer < invincibilityDuration)
         {
             visible = !visible;
-            if (sr != null) sr.color = visible ? Color.white : new Color(1f, 1f, 1f, 0.3f);
+            if (sr != null) sr.color = visible ? baseColor : new Color(baseColor.r, baseColor.g, baseColor.b, 0.3f);
             yield return new WaitForSeconds(0.1f);
             flashTimer += 0.1f;
         }
 
-        if (sr != null) sr.color = Color.white;
+        if (sr != null) sr.color = baseColor;
         isInvincible = false;
     }
 
