@@ -4972,7 +4972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1990936608}
-  startMinutes: 2
+  startSeconds: 180
   playerScale: {fileID: 320849406}
   timerText: {fileID: 1868981904}
   speedMultipliers:
