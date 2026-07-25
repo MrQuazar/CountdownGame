@@ -39,7 +39,7 @@ public class BasicPatrolEnemy : MonoBehaviour
         }
 
         Vector2 direction = (currentTarget.position - transform.position).normalized;
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(direction.x * moveSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
 
         facing = direction.x >= 0 ? 1f : -1f;
         transform.localScale = new Vector3(facing, 1f, 1f);

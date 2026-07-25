@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1990936608}
-  startSeconds: 2
+  startSeconds: 120
   playerScale: {fileID: 320849406}
   timerText: {fileID: 1868981904}
   speedMultipliers:
@@ -1649,6 +1649,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleText: {fileID: 1058049917}
   winScreen: {fileID: 416512371}
+  playerScale: {fileID: 320849406}
+  mobileSpeedMultipliers:
+  - 0.5
+  - 1
+  - 2
 --- !u!114 &1865308495
 MonoBehaviour:
   m_ObjectHideFlags: 0

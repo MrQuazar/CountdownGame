@@ -9,7 +9,7 @@ public class GameTimer : MonoBehaviour
     public GameObject loseScreen;
 
     [Header("Timer Settings")]
-    public float startSeconds = 2f;
+    public float startMinutes = 2f;
 
     [Header("References")]
     public PlayerScale playerScale;
@@ -29,7 +29,7 @@ public class GameTimer : MonoBehaviour
 
     void Start()
     {
-        timeRemaining = startSeconds;
+        timeRemaining = startMinutes * 60f;
         UpdateDisplay();
     }
 
