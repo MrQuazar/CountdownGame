@@ -5050,7 +5050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1990936608}
-  startMinutes: 2
+  startMinutes: 3
   playerScale: {fileID: 320849406}
   timerText: {fileID: 1868981904}
   speedMultipliers:
@@ -6105,7 +6105,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
