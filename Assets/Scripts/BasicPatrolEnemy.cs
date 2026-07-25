@@ -12,19 +12,23 @@ public class BasicPatrolEnemy : MonoBehaviour
     public int contactDamage = 1;
 
     private Rigidbody2D rb;
+    private Animator animator;
+    private EnemyHealth health;
     private Transform currentTarget;
     private float facing = 1f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        health = GetComponent<EnemyHealth>();
         currentTarget = pointB;
     }
 
     void FixedUpdate()
     {
-        EnemyHealth health = GetComponent<EnemyHealth>();
-        if (health != null && health.IsKnockedBack) return;
+        if (health != null && (health.IsKnockedBack || health.IsDead)) return;
+
         Vector2 direction = (currentTarget.position - transform.position).normalized;
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
 
@@ -39,6 +43,8 @@ public class BasicPatrolEnemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (health != null && health.IsDead) return;
+
         PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {

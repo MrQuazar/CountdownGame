@@ -151,7 +151,8 @@ public class PlayerController2D : MonoBehaviour
             attackVisual.transform.localScale = scale;
         }
 
-        animator.SetFloat("Speed", Mathf.Abs(moveInput));
+        bool isRunning = (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && isGrounded;
+        animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsGrounded", isGrounded);
     }
 
