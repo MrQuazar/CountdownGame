@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7553c9d3931a3534ab60424961940fdd
+guid: 5b54f19d2f0bd894b81305575eb67f2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1848450173429445276
-    second: steamworld_0
+      213: 7971608573602069586
+    second: skill-desc_0000_foreground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: steamworld_0
+      name: skill-desc_0000_foreground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 592
-        height: 272
+        width: 272
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c927544a3a307a910800000000000000
-      internalID: 1848450173429445276
+      spriteID: 25c720623c7d0ae60800000000000000
+      internalID: 7971608573602069586
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      steamworld_0: 1848450173429445276
+      skill-desc_0000_foreground_0: 7971608573602069586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
