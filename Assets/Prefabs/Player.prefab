@@ -223,11 +223,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScale: {fileID: 4261610039767531866}
   playerHealth: {fileID: 4838382402422130196}
-  moveSpeed: 8
+  moveSpeed: 4
   jumpForces:
+  - 5
   - 10
-  - 14
-  - 18
+  - 15
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   dashSpeed: 20
@@ -236,7 +236,7 @@ MonoBehaviour:
   attackPoint: {fileID: 7063382554812616732}
   attackRange: 1
   attackCooldown: 0.35
-  attackDamages: 010000000100000002000000
+  attackDamages: 010000000200000003000000
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -245,7 +245,7 @@ MonoBehaviour:
   damageTakenMultipliers:
   - 1.5
   - 1
-  - 0.6
+  - 0.5
   groundCheck: {fileID: 3003990145786076635}
   groundCheckRadius: 0.15
   groundLayer:
@@ -324,9 +324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleStages:
-  - 0.5
-  - 1
-  - 2
+  - 0.1
+  - 0.2
+  - 0.3
   startStageIndex: 1
   obstacleLayer:
     serializedVersion: 2
