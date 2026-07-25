@@ -12,10 +12,25 @@ public class VerticalFan : MonoBehaviour
     public bool showGizmo = true;
 
     private BoxCollider2D zone;
+    private AudioSource humSource;
 
     void Awake()
     {
         zone = GetComponent<BoxCollider2D>();
+
+        humSource = gameObject.AddComponent<AudioSource>();
+        humSource.playOnAwake = false;
+        humSource.spatialBlend = 0f;
+    }
+
+    void OnEnable()
+    {
+        AudioManager.Instance?.StartLoopSFX(humSource, SFXType.VerticalFan);
+    }
+
+    void OnDisable()
+    {
+        AudioManager.Instance?.StopLoopSFX(humSource);
     }
 
     void Reset()

@@ -19,8 +19,7 @@ public class Collectible : MonoBehaviour
         if (collectVFX != null)
             Instantiate(collectVFX, transform.position, Quaternion.identity);
 
-        if (collectSFX != null)
-            AudioSource.PlayClipAtPoint(collectSFX, transform.position);
+        AudioManager.Instance?.PlaySFX(SFXType.Collectible, transform.position, collectSFX);
 
         if (GameManager.Instance != null)
             GameManager.Instance.CollectItem();

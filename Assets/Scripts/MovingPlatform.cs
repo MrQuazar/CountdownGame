@@ -46,6 +46,7 @@ public class MovingPlatform : MonoBehaviour
     private float currentRotation = 0f;   // used by Rotate
     public Vector2 Velocity { get; private set; }
     private Vector2 previousPosition;
+    private AudioSource moveLoopSource;
 
     void FixedUpdate()
     {
@@ -53,6 +54,7 @@ public class MovingPlatform : MonoBehaviour
         if (motionFinished)
         {
             Velocity = Vector2.zero;
+            AudioManager.Instance?.StopLoopSFX(moveLoopSource);
             return;
         }
 
@@ -65,12 +67,20 @@ public class MovingPlatform : MonoBehaviour
 
         Velocity = (rb.position - previousPosition) / Time.fixedDeltaTime;
         previousPosition = rb.position;
+
+        bool isMoving = motionType != MotionType.Linear || !waiting;
+        if (isMoving) AudioManager.Instance?.StartLoopSFX(moveLoopSource, SFXType.MovingPlatform);
+        else AudioManager.Instance?.StopLoopSFX(moveLoopSource);
     }
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
+
+        moveLoopSource = gameObject.AddComponent<AudioSource>();
+        moveLoopSource.playOnAwake = false;
+        moveLoopSource.spatialBlend = 0f;
     }
 
     void Start()

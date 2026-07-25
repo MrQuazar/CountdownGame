@@ -45,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= scaledAmount;
         ApplyKnockback(sourcePosition);
         StartCoroutine(InvincibilityFlash());
+        AudioManager.Instance?.PlaySFX(SFXType.TakeDamage, transform.position);
 
         if (currentHealth <= 0)
         {

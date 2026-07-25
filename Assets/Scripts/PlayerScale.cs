@@ -38,6 +38,8 @@ public class PlayerScale : MonoBehaviour
 
         currentStage = startStageIndex;
         transform.localScale = new Vector3(facing * scaleStages[currentStage], scaleStages[currentStage], 1f);
+
+        AudioManager.Instance?.PlayGameMusicForStage(currentStage);
     }
 
     void Update()
@@ -103,6 +105,7 @@ public class PlayerScale : MonoBehaviour
 
         currentStage = newStageIndex;
         transform.localScale = new Vector3(facing * newScale, newScale, 1f);
+        AudioManager.Instance?.PlayGameMusicForStage(currentStage);
 
         float newHalfHeight = (baseColliderSize.y * newScale) / 2f;
         float newY = feetY - (baseColliderOffset.y * newScale) + newHalfHeight;

@@ -16,6 +16,7 @@ public class BasicPatrolEnemy : MonoBehaviour
     private EnemyHealth health;
     private Transform currentTarget;
     private float facing = 1f;
+    private AudioSource moveLoopSource;
 
     void Awake()
     {
@@ -23,11 +24,19 @@ public class BasicPatrolEnemy : MonoBehaviour
         animator = GetComponent<Animator>();
         health = GetComponent<EnemyHealth>();
         currentTarget = pointB;
+
+        moveLoopSource = gameObject.AddComponent<AudioSource>();
+        moveLoopSource.playOnAwake = false;
+        moveLoopSource.spatialBlend = 0f;
     }
 
     void FixedUpdate()
     {
-        if (health != null && (health.IsKnockedBack || health.IsDead)) return;
+        if (health != null && (health.IsKnockedBack || health.IsDead))
+        {
+            AudioManager.Instance?.StopLoopSFX(moveLoopSource);
+            return;
+        }
 
         Vector2 direction = (currentTarget.position - transform.position).normalized;
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
@@ -35,7 +44,9 @@ public class BasicPatrolEnemy : MonoBehaviour
         facing = direction.x >= 0 ? 1f : -1f;
         transform.localScale = new Vector3(facing, 1f, 1f);
 
-        if (Vector2.Distance(transform.position, currentTarget.position) < 0.1f)
+        AudioManager.Instance?.StartLoopSFX(moveLoopSource, SFXType.SimpleEnemyMove);
+
+        if (Vector2.Distance(transform.position, currentTarget.position) < 0.5f)
         {
             currentTarget = currentTarget == pointA ? pointB : pointA;
         }
@@ -44,6 +55,17 @@ public class BasicPatrolEnemy : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (health != null && health.IsDead) return;
+
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(contactDamage, transform.position);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (health != null && (health.IsKnockedBack || health.IsDead)) return;
 
         PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
         if (playerHealth != null)
