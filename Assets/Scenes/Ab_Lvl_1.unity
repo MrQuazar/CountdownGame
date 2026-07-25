@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+ m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -657,8 +657,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102536238}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &111608433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1094,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
->>>>>>> origin/Ab_Lvl
 --- !u!1001 &174633588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,8 +1295,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211042180}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &226139118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1413,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1614062141}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &251480935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,8 +1449,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-=======
 --- !u!1 &252417760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1567,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &266551468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,8 +1732,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &271537457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,7 +2343,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/Ab_Lvl
 --- !u!4 &320849402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4041888543591171257, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
@@ -2762,13 +2750,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1322007218}
-<<<<<<< HEAD
-=======
   - {fileID: 446110027}
   - {fileID: 763350906}
   - {fileID: 817480532}
   - {fileID: 1630264862}
->>>>>>> origin/Ab_Lvl
   - {fileID: 744356734}
   - {fileID: 1161255354}
   - {fileID: 1554812195}
@@ -3459,8 +3444,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &423027563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,7 +3839,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> origin/Ab_Lvl
 --- !u!1 &455060940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,8 +5962,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &752863467
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,7 +6214,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> origin/Ab_Lvl
 --- !u!1 &768347732
 GameObject:
   m_ObjectHideFlags: 0
@@ -6680,8 +6659,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-<<<<<<< HEAD
-=======
 --- !u!1 &810941902
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,7 +6880,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> origin/Ab_Lvl
 --- !u!1 &828221500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3072549495894287750, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
@@ -7116,8 +7092,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a355129a62f941449bc07f5b30754470, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &905538746
 GameObject:
   m_ObjectHideFlags: 0
@@ -8193,7 +8167,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.034}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &1058049915
 GameObject:
   m_ObjectHideFlags: 0
@@ -11460,8 +11433,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1451622361
 GameObject:
   m_ObjectHideFlags: 0
@@ -11725,7 +11696,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &1453208485
 GameObject:
   m_ObjectHideFlags: 0
@@ -12052,8 +12022,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1874200775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1504812244
 GameObject:
   m_ObjectHideFlags: 0
@@ -12491,7 +12459,6 @@ RectTransform:
   m_AnchoredPosition: {x: -13.9, y: 1.62}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &1554812194
 GameObject:
   m_ObjectHideFlags: 0
@@ -12777,8 +12744,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1614062140
 GameObject:
   m_ObjectHideFlags: 0
@@ -13002,7 +12967,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &1626031135
 GameObject:
   m_ObjectHideFlags: 0
@@ -14228,8 +14192,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1554812195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1732697548
 GameObject:
   m_ObjectHideFlags: 0
@@ -15015,7 +14977,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &1796813057
 GameObject:
   m_ObjectHideFlags: 0
@@ -16129,8 +16090,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a355129a62f941449bc07f5b30754470, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &1931830238
 GameObject:
   m_ObjectHideFlags: 0
@@ -16718,7 +16677,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a355129a62f941449bc07f5b30754470, type: 3}
->>>>>>> origin/Ab_Lvl
 --- !u!1 &1981613301
 GameObject:
   m_ObjectHideFlags: 0
@@ -17876,8 +17834,6 @@ PrefabInstance:
       addedObject: {fileID: 798528129}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6c60ca715c3ad4ea1b44ab67e38449, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &2057258869
 GameObject:
   m_ObjectHideFlags: 0
@@ -18219,7 +18175,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> origin/Ab_Lvl
 --- !u!1 &2105135115
 GameObject:
   m_ObjectHideFlags: 0
@@ -19277,8 +19232,6 @@ SceneRoots:
   - {fileID: 1906107914}
   - {fileID: 853849235}
   - {fileID: 1885877417}
-<<<<<<< HEAD
-=======
   - {fileID: 1532873015}
   - {fileID: 1451622364}
   - {fileID: 307881288}
@@ -19404,4 +19357,3 @@ SceneRoots:
   - {fileID: 595408342}
   - {fileID: 35296682}
   - {fileID: 1190720782}
->>>>>>> origin/Ab_Lvl
