@@ -29520,11 +29520,11 @@ MonoBehaviour:
   target: {fileID: 0}
   smoothTime: 0.15
   offset: {x: 0, y: 1, z: -10}
-  useBounds: 0
-  minX: 5
-  maxX: 10
-  minY: 5
-  maxY: 10
+  useBounds: 1
+  minX: -46.81
+  maxX: 39.25
+  minY: -8.3
+  maxY: 38.72
 --- !u!1 &2136468015
 GameObject:
   m_ObjectHideFlags: 0
