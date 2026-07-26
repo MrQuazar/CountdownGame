@@ -20,7 +20,7 @@ public class ScaleDial : MonoBehaviour
     public Vector2 followOffset = new Vector2(-2.5f, 0f);
 
     [Header("Reel")]
-    public float[] slotSpacing = {0f,1f,1.2f};
+    public float[] slotPositions = { -1.2f, 0f, 1.2f };
     public float rollSpeed = 6f; // units/sec
 
     [Header("Opacity")]
@@ -68,7 +68,7 @@ public class ScaleDial : MonoBehaviour
             if (hideTimer <= 0f) SetVisible(false);
         }
 
-        float targetY = (stage - 1) * slotSpacing[stage];
+        float targetY = slotPositions[Mathf.Clamp(stage, 0, slotPositions.Length - 1)];
         Vector3 pos = reel.localPosition;
         pos.y = Mathf.MoveTowards(pos.y, targetY, rollSpeed * Time.deltaTime);
         reel.localPosition = pos;

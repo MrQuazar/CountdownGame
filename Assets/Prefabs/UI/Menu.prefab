@@ -1152,6 +1152,8 @@ MonoBehaviour:
   closeLevelPanelButton: {fileID: 9016742433928860535}
   excludedSceneNames:
   - MainMenu
+  - Level_0
+  - TestLevel
 --- !u!1 &4689543009492060020
 GameObject:
   m_ObjectHideFlags: 0
