@@ -12260,6 +12260,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992863637833866954, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
+      propertyPath: 'jumpForces.Array.data[0]'
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992863637833866954, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
+      propertyPath: 'jumpForces.Array.data[1]'
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992863637833866954, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
+      propertyPath: 'moveSpeeds.Array.data[2]'
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4041888543591171257, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -38.02
