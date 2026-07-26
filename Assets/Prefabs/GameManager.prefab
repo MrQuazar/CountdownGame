@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 0}
-  startMinutes: 2
+  startMinutes: 1.5
   playerScale: {fileID: 0}
   playerHealth: {fileID: 0}
   timerText: {fileID: 0}
