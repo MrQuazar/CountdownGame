@@ -9519,6 +9519,10 @@ PrefabInstance:
       propertyPath: playerScale
       value: 
       objectReference: {fileID: 1309785253}
+    - target: {fileID: 4143452751002082680, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
+      propertyPath: followOffset.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7209173169684621289, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
       propertyPath: m_SortingOrder
       value: 9

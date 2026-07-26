@@ -26,6 +26,7 @@ public class MainMenuController : MonoBehaviour
     public string gameplaySceneName = "Game";
     [Header("Level Select")]
     public GameObject levelPanel;
+    public GameObject optionsPanel;
     public Transform levelListContent;
     public Button levelButtonPrefab;
     public Button openLevelPanelButton;
@@ -112,10 +113,12 @@ public class MainMenuController : MonoBehaviour
     public void OpenLevelPanel()
     {
         if (levelPanel != null) levelPanel.SetActive(true);
+        if (optionsPanel != null) optionsPanel.SetActive(false);
     }
 
     public void CloseLevelPanel()
     {
         if (levelPanel != null) levelPanel.SetActive(false);
+        if (optionsPanel != null) optionsPanel.SetActive(true);
     }
 }
