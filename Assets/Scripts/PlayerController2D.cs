@@ -8,7 +8,9 @@ public class PlayerController2D : MonoBehaviour
     public PlayerHealth playerHealth;
 
     [Header("Movement")]
-    public float moveSpeed = 8f;
+    [Tooltip("Index 0 = Small, 1 = Normal, 2 = Large.")]
+    public float[] moveSpeeds = { 6f, 8f, 5f };
+    private float MoveSpeed => moveSpeeds[Mathf.Clamp((int)playerScale.CurrentScaleStage, 0, moveSpeeds.Length - 1)];
 
     [Header("Jump")]
     [Tooltip("Index 0 = Small, 1 = Normal, 2 = Large.")]
@@ -184,7 +186,7 @@ public class PlayerController2D : MonoBehaviour
             return;
         }
 
-        float horizontalVelocity = moveInput * moveSpeed + platformVelocity.x;
+        float horizontalVelocity = moveInput * MoveSpeed  + platformVelocity.x;
 
         if (platformVelocity.y != 0f && !justJumped)
         {

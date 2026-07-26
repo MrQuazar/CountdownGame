@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("All collectibles found — goal complete!");
         GameTimer.Instance?.StopTimer();
         if (playerHealth != null) playerHealth.FreezeControl();
+        AudioManager.Instance?.PlaySFX(SFXType.Win); 
         if (winScreen != null) winScreen.SetActive(true);
     }
 

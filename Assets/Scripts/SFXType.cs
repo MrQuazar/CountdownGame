@@ -17,5 +17,7 @@ public enum SFXType
     ChasingEnemyAttack, // AggressiveEnemy attack
     BoxPush,            // Pushable being pushed
     VerticalFan,        // VerticalFan ambient hum
-    MovingPlatform      // MovingPlatform in motion
+    MovingPlatform ,     // MovingPlatform in motion
+    Win,
+    Lose
 }

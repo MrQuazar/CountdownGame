@@ -138,6 +138,7 @@ public class GameTimer : MonoBehaviour
     {
         Debug.Log("Time's up!");
         if (playerHealth != null) playerHealth.FreezeControl();
+        AudioManager.Instance?.PlaySFX(SFXType.Lose); 
         if (loseScreen != null) loseScreen.SetActive(true);
     }
     public void StopTimer() => timerRunning = false;

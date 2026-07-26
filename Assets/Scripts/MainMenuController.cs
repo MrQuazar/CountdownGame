@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 
 /// <summary>
 /// Main menu screen: Play button, Music slider, SFX slider.
@@ -21,6 +24,14 @@ public class MainMenuController : MonoBehaviour
 
     [Header("Scene")]
     public string gameplaySceneName = "Game";
+    [Header("Level Select")]
+    public GameObject levelPanel;
+    public Transform levelListContent;
+    public Button levelButtonPrefab;
+    public Button openLevelPanelButton;
+    public Button closeLevelPanelButton;
+    [Tooltip("Scene names to exclude from the auto-generated list (e.g. this menu itself).")]
+    public List<string> excludedSceneNames = new List<string> { "MainMenu" };
 
     void Awake()
     {
@@ -37,11 +48,15 @@ public class MainMenuController : MonoBehaviour
         if (playButton != null) playButton.onClick.AddListener(OnPlayPressed);
         if (musicSlider != null) musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
         if (sfxSlider != null) sfxSlider.onValueChanged.AddListener(OnSFXSliderChanged);
+        if (openLevelPanelButton != null) openLevelPanelButton.onClick.AddListener(OpenLevelPanel);
+        if (closeLevelPanelButton != null) closeLevelPanelButton.onClick.AddListener(CloseLevelPanel);
     }
 
     void Start()
     {
         if (!menuEnabled) return;
+        if (levelPanel != null) levelPanel.SetActive(false);
+        BuildLevelList();
 
         if (AudioManager.Instance != null)
         {
@@ -64,5 +79,43 @@ public class MainMenuController : MonoBehaviour
     public void OnSFXSliderChanged(float value)
     {
         if (AudioManager.Instance != null) AudioManager.Instance.SFXVolume = value;
+    }
+    void BuildLevelList()
+    {
+        if (levelListContent == null || levelButtonPrefab == null) return;
+
+        int count = SceneManager.sceneCountInBuildSettings;
+        for (int i = 0; i < count; i++)
+        {
+            string path = SceneUtility.GetScenePathByBuildIndex(i);
+            string sceneName = System.IO.Path.GetFileNameWithoutExtension(path);
+
+            if (excludedSceneNames.Contains(sceneName)) continue;
+
+            int buildIndex = i;
+            Button btn = Instantiate(levelButtonPrefab, levelListContent);
+            btn.gameObject.SetActive(true);
+
+            TextMeshProUGUI label = btn.GetComponentInChildren<TextMeshProUGUI>();
+            if (label != null) label.text = sceneName;
+
+            btn.onClick.AddListener(() => LoadLevel(buildIndex));
+        }
+    }
+
+    void LoadLevel(int buildIndex)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(buildIndex);
+    }
+
+    public void OpenLevelPanel()
+    {
+        if (levelPanel != null) levelPanel.SetActive(true);
+    }
+
+    public void CloseLevelPanel()
+    {
+        if (levelPanel != null) levelPanel.SetActive(false);
     }
 }
