@@ -7266,7 +7266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Laucnhpad only for Carog
+  m_text: Laucnhpad only for Cargo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af8c09a117fc42b4db88bd0bd0331f73, type: 2}
   m_sharedMaterial: {fileID: -8159087946313444768, guid: af8c09a117fc42b4db88bd0bd0331f73, type: 2}
