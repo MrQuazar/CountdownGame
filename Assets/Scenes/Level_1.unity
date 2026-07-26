@@ -2097,17 +2097,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1058049917 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3882442515716071496, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
-  m_PrefabInstance: {fileID: 1704170256667079465}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1086241129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4175,13 +4164,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1990936608}
-  startSeconds: 60
+  startMinutes: 2
   playerScale: {fileID: 0}
-  timerText: {fileID: 1868981904}
+  playerHealth: {fileID: 0}
+  timerText: {fileID: 0}
   speedMultipliers:
   - 0.5
   - 1
   - 2
+  basePulseFrequency: 1.5
+  pulseAmount: 0.15
+  lowTimeThreshold: 10
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  lowTimeColor: {r: 1, g: 0, b: 0, a: 1}
+  bonusText: {fileID: 0}
+  bonusDisplayDuration: 3
+  shakeMagnitude: 8
 --- !u!4 &1865308493
 Transform:
   m_ObjectHideFlags: 0
@@ -4209,8 +4207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f3c52403fbd314f97089f97fc146ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleText: {fileID: 1058049917}
+  collectibleText: {fileID: 0}
   winScreen: {fileID: 416512371}
+  playerHealth: {fileID: 0}
+  nextLevelSceneName: 
+  playerScale: {fileID: 0}
+  mobileSpeedMultipliers:
+  - 0.5
+  - 1
+  - 2
 --- !u!114 &1865308495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4233,17 +4238,6 @@ MonoBehaviour:
   sfxSlider: {fileID: 1690139349}
   playerHealth: {fileID: 0}
   mainMenuSceneName: MainMenu
---- !u!114 &1868981904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6532379580432880343, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
-  m_PrefabInstance: {fileID: 1704170256667079465}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1884253303
 GameObject:
   m_ObjectHideFlags: 0
@@ -4940,15 +4934,27 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1238503280096148296, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2038863553507042511, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
       propertyPath: m_Name
       value: GameHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935705650218964494, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4635342455401090952, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5541176595493896399, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752982725016813441, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -5030,6 +5036,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6353178792247546468, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395761686489219646, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
