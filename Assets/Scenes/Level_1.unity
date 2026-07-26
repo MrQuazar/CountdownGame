@@ -22976,6 +22976,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791453891139977017, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1813588855167956706, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -23024,6 +23028,10 @@ PrefabInstance:
       propertyPath: playerScale
       value: 
       objectReference: {fileID: 1313481331}
+    - target: {fileID: 4959080217698334438, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7008757916567366726, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
       propertyPath: m_Name
       value: ScaleDial
@@ -23031,6 +23039,10 @@ PrefabInstance:
     - target: {fileID: 7008757916567366726, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329188715448329780, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
