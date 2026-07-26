@@ -150,9 +150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuMusic: {fileID: 8300000, guid: 93be52c98c81d6b49a39b49c969394f0, type: 3}
   gameMusicByScale:
-  - {fileID: 8300000, guid: ac4751551de67da428ed39a1750a3e24, type: 3}
-  - {fileID: 8300000, guid: a8516857e1965074091989f09a452a7f, type: 3}
-  - {fileID: 8300000, guid: efd9d5fd07a956d4f9d657cdb90b865f, type: 3}
+  - {fileID: 8300000, guid: 8ae93adec01e8ff419035fca242faa1f, type: 3}
+  - {fileID: 8300000, guid: b8c0d65117b86c543b53f633a8bc14bf, type: 3}
+  - {fileID: 8300000, guid: 98658d97f00ce804280fb9a4472f2ef7, type: 3}
   musicCrossfadeDuration: 1.5
   sfxLibrary:
   - type: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   - type: 8
     enabled: 1
     clips:
-    - {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
+    - {fileID: 8300000, guid: 63737dfd3d9678747a964e6728ad0134, type: 3}
     volume: 0.05
     minPitch: 0.75
     maxPitch: 0.95
