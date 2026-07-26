@@ -11,9 +11,32 @@ public class GameManager : MonoBehaviour
 
     [Header("Win")]
     public GameObject winScreen;
-
+    public PlayerHealth playerHealth;
+    public string nextLevelSceneName;
     private int totalCollectibles;
     private int collectedCount;
+
+    [Header("Global Mobile Speed")]
+    [Tooltip("Reference to the player's PlayerScale, used to look up the multiplier below.")]
+    public PlayerScale playerScale;
+    [Tooltip("Speed multiplier applied to enemies, the chasing enemy, and moving platforms based on the player's current scale stage. Index 0 = Small, 1 = Normal, 2 = Large — matches PlayerScale.ScaleStage. Never affects the player itself.")]
+    public float[] mobileSpeedMultipliers = { 0.5f, 1f, 2f };
+
+    public float CurrentMobileSpeedMultiplier
+    {
+        get
+        {
+            if (playerScale == null || mobileSpeedMultipliers == null || mobileSpeedMultipliers.Length == 0) return 1f;
+            int stage = Mathf.Clamp(playerScale.CurrentStage, 0, mobileSpeedMultipliers.Length - 1);
+            return mobileSpeedMultipliers[stage];
+        }
+    }
+
+    /// <summary>Null-safe static accessor: 1f if no GameManager/PlayerScale is set up yet.</summary>
+    public static float MobileSpeedMultiplier => Instance != null ? Instance.CurrentMobileSpeedMultiplier : 1f;
+
+    /// <summary>Fires whenever CollectedCount changes (i.e. after CollectItem()).</summary>
+    public event System.Action OnCollectionChanged;
 
     void Awake()
     {
@@ -40,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         collectedCount++;
         UpdateUI();
+        OnCollectionChanged?.Invoke();
 
         if (collectedCount >= totalCollectibles)
             OnAllCollected();
@@ -54,14 +78,23 @@ public class GameManager : MonoBehaviour
     void OnAllCollected()
     {
         Debug.Log("All collectibles found — goal complete!");
+        GameTimer.Instance?.StopTimer();
+        if (playerHealth != null) playerHealth.FreezeControl();
         if (winScreen != null) winScreen.SetActive(true);
     }
 
     public int CollectedCount => collectedCount;
     public int TotalCollectibles => totalCollectibles;
+
     public void RetryLevel()
     {
-        Time.timeScale = 1f; // in case you paused via timeScale on timeout
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nextLevelSceneName);
     }
 }

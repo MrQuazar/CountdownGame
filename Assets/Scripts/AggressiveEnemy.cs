@@ -152,7 +152,7 @@ public class AggressiveEnemy : MonoBehaviour
     void Patrol()
     {
         Vector2 direction = (currentPatrolTarget.position - transform.position).normalized;
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(direction.x * moveSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
 
         UpdateFacing(direction.x);
         if (Vector2.Distance(transform.position, currentPatrolTarget.position) < 0.5f)
@@ -170,7 +170,7 @@ public class AggressiveEnemy : MonoBehaviour
 
         if (distToPlayer > attackRange)
         {
-            rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(direction.x * moveSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
         }
         else
         {
