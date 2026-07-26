@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 2159878538769116754}
   - component: {fileID: 6605758496469527037}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MMPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 6716790388014677657}
   - component: {fileID: 8452766644284032902}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ResumePause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 8251599760726036287}
   - component: {fileID: 7731921191181854987}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RetryPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

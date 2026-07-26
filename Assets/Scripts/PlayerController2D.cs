@@ -23,6 +23,7 @@ public class PlayerController2D : MonoBehaviour
     public float dashDuration = 0.15f;
     public float dashCooldown = 0.6f;
     private bool airDashUsed = false;
+    private float gravityScale = 0f;
 
     [Header("Attack")]
     public Transform attackPoint;
@@ -211,6 +212,7 @@ public class PlayerController2D : MonoBehaviour
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
+        gravityScale = rb.gravityScale;
         rb.gravityScale = 0f;
         animator.SetTrigger("Dash");
         AudioManager.Instance?.PlaySFX(SFXType.Dash, transform.position);
@@ -222,7 +224,7 @@ public class PlayerController2D : MonoBehaviour
     void EndDash()
     {
         isDashing = false;
-        rb.gravityScale = 1f;
+        rb.gravityScale = gravityScale;
     }
 
     public void TeleportTo(Vector2 position)
