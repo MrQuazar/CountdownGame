@@ -29054,6 +29054,10 @@ PrefabInstance:
       propertyPath: nextLevelButton
       value: 
       objectReference: {fileID: 236711782}
+    - target: {fileID: 1920878454573226705, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
+      propertyPath: nextLevelSceneName
+      value: Level9
+      objectReference: {fileID: 0}
     - target: {fileID: 3842368910777805560, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -40547,7 +40551,7 @@ PrefabInstance:
     - target: {fileID: 4838382402422130196, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: loseScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1142462967}
     - target: {fileID: 5174088768586176347, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_SortingOrder
       value: 1
