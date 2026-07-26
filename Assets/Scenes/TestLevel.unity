@@ -2314,30 +2314,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3070850076348982033, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3070850076348982033, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3070850076348982033, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3070850076348982033, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.533
-      objectReference: {fileID: 0}
-    - target: {fileID: 3070850076348982033, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.127
-      objectReference: {fileID: 0}
-    - target: {fileID: 3070850076348982033, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3452027826730955847, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.419765
@@ -2379,10 +2355,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7384586905503253713, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: damage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7384586905503253713, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 2000644179}
@@ -2390,14 +2362,6 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 953898835}
-    - target: {fileID: 7384586905503253713, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: attackRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7384586905503253713, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
-      propertyPath: attackRange
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8467124863562248203, guid: f8b95defbefa160469a83101bdac2c4a, type: 3}
       propertyPath: m_Name
       value: Enemy Advance
