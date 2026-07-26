@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8818037218162232535}
   - component: {fileID: 6604558743867086445}
   - component: {fileID: 7462124829127831468}
-  - component: {fileID: -2910205962183626834}
+  - component: {fileID: 8290882704494619486}
   m_Layer: 0
   m_Name: Collectible
   m_TagString: Untagged
@@ -152,20 +152,25 @@ MonoBehaviour:
   collectSFX: {fileID: 0}
   timeBonusSeconds: 5
   rotationSpeed: 240
---- !u!111 &-2910205962183626834
-Animation:
+--- !u!95 &8290882704494619486
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8378647247627513794}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 46889c8dfee385d4080e2776c00e8195, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 46889c8dfee385d4080e2776c00e8195, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf85c5fd901ca27458ce2617441352a2, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
-  m_CullingType: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

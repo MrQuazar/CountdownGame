@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1093397006285289875}
   - component: {fileID: 7313906852195486975}
   - component: {fileID: 7933530944233204909}
+  - component: {fileID: 1190351887161943679}
   m_Layer: 3
   m_Name: Jump Pad
   m_TagString: Untagged
@@ -154,3 +155,25 @@ MonoBehaviour:
     m_Bits: 128
   animator: {fileID: 0}
   triggerName: Launch
+--- !u!95 &1190351887161943679
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161186682673641345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21846767547d7284d9991f47cdfce84b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
