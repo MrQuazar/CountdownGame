@@ -18,31 +18,31 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_0.unity
     guid: 9eaea8b4e1a4b9f4d873a5b1522b235f
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
+    path: Assets/Scenes/Level1.unity
     guid: b4a32b1ccfd8b86429e10bfb72201849
   - enabled: 1
-    path: Assets/Scenes/Level_2.unity
+    path: Assets/Scenes/Level2.unity
     guid: 332a7d6ceff221241bc9e1fd94dda1dc
   - enabled: 1
-    path: Assets/Scenes/Level_3.unity
+    path: Assets/Scenes/Level5.unity
     guid: 1cd869224faa82841a3434ddcb630437
   - enabled: 1
-    path: Assets/Scenes/Neeraj1.unity
+    path: Assets/Scenes/Level3.unity
     guid: c7252b41352b7c141bbec36f23be4ce7
   - enabled: 1
-    path: Assets/Scenes/Neeraj2.unity
+    path: Assets/Scenes/Level6.unity
     guid: 8f2c0cb1a9cd00546a5224f03e0243c0
   - enabled: 1
-    path: Assets/Scenes/Neeraj3.unity
+    path: Assets/Scenes/Level7.unity
     guid: e5bc9a7514ddf674b92f4077f1da0906
   - enabled: 1
-    path: Assets/Scenes/Ab_Lvl_1.unity
+    path: Assets/Scenes/Level4.unity
     guid: a0a79eedf7695d441a9d2b69ab326b1f
   - enabled: 1
-    path: Assets/Scenes/Ab_Lvl_2.unity
+    path: Assets/Scenes/Level8.unity
     guid: b818f2e1b7c62e3419671544b6ca2a3c
   - enabled: 1
-    path: Assets/Scenes/Ab_Lvl_3.unity
+    path: Assets/Scenes/Level9.unity
     guid: 1d83f2582d0e25440b303b33d20d4bc6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

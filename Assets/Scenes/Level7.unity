@@ -21149,6 +21149,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 298721279}
     - target: {fileID: 1920878454573226705, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
+      propertyPath: nextLevelButton
+      value: 
+      objectReference: {fileID: 1420665118}
+    - target: {fileID: 1920878454573226705, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
       propertyPath: nextLevelSceneName
       value: Level8
       objectReference: {fileID: 0}
@@ -24341,6 +24345,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 191981306364062538, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
   m_PrefabInstance: {fileID: 1420665116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420665118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8476004810012213178, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
+  m_PrefabInstance: {fileID: 1420665116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1425702508
 GameObject:
   m_ObjectHideFlags: 0

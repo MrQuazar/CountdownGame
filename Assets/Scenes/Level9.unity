@@ -5704,6 +5704,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 191981306364062538, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
   m_PrefabInstance: {fileID: 236711780}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &236711782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8476004810012213178, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
+  m_PrefabInstance: {fileID: 236711780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &237406559
 GameObject:
   m_ObjectHideFlags: 0
@@ -24541,6 +24552,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1226316910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5697893785917017151, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+  m_PrefabInstance: {fileID: 1226316907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1233973932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29020,6 +29042,10 @@ PrefabInstance:
       propertyPath: collectibleText
       value: 
       objectReference: {fileID: 1226316908}
+    - target: {fileID: 1920878454573226705, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
+      propertyPath: nextLevelButton
+      value: 
+      objectReference: {fileID: 236711782}
     - target: {fileID: 3842368910777805560, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -29092,6 +29118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6832560485617515783, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
+      propertyPath: bonusText
+      value: 
+      objectReference: {fileID: 1226316910}
     - target: {fileID: 6832560485617515783, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
       propertyPath: timerText
       value: 

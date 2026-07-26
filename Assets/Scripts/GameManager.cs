@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public string nextLevelSceneName;
     private int totalCollectibles;
     private int collectedCount;
+    public Button nextLevelButton;
 
     [Header("Global Mobile Speed")]
     [Tooltip("Reference to the player's PlayerScale, used to look up the multiplier below.")]
@@ -80,7 +82,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("All collectibles found — goal complete!");
         GameTimer.Instance?.StopTimer();
         if (playerHealth != null) playerHealth.FreezeControl();
-        AudioManager.Instance?.PlaySFX(SFXType.Win); 
+        AudioManager.Instance?.PlaySFX(SFXType.Win);
+        if (nextLevelButton != null) nextLevelButton.gameObject.SetActive(!string.IsNullOrEmpty(nextLevelSceneName));
         if (winScreen != null) winScreen.SetActive(true);
     }
 
