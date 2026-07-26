@@ -5,7 +5,8 @@ using UnityEngine;
 public class AggressiveEnemy : MonoBehaviour
 {
     [Header("Patrol")]
-    public float moveSpeed = 2f;
+    public float patrolSpeed = 2f;
+    public float chaseSpeed = 3.5f;
     public Transform pointA;
     public Transform pointB;
 
@@ -40,6 +41,7 @@ public class AggressiveEnemy : MonoBehaviour
     private bool isAggro = false;
     private Coroutine attackVisualRoutine;
     private AudioSource moveLoopSource;
+    private bool isMovingTowardPlayer = false;
 
     void Awake()
     {
@@ -65,7 +67,7 @@ public class AggressiveEnemy : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetBool("IsChasing", isAggro && !waitingToDeAggro);
+            animator.SetBool("IsChasing", isAggro && !waitingToDeAggro && isMovingTowardPlayer);
             animator.SetBool("IsWaiting", waitingToDeAggro);
         }
     }
@@ -152,7 +154,7 @@ public class AggressiveEnemy : MonoBehaviour
     void Patrol()
     {
         Vector2 direction = (currentPatrolTarget.position - transform.position).normalized;
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(direction.x * patrolSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
 
         UpdateFacing(direction.x);
         if (Vector2.Distance(transform.position, currentPatrolTarget.position) < 0.5f)
@@ -168,9 +170,10 @@ public class AggressiveEnemy : MonoBehaviour
 
         UpdateFacing(direction.x);
 
+        isMovingTowardPlayer = distToPlayer > attackRange;
         if (distToPlayer > attackRange)
         {
-            rb.linearVelocity = new Vector2(direction.x * moveSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(direction.x * chaseSpeed * GameManager.MobileSpeedMultiplier, rb.linearVelocity.y);
         }
         else
         {
@@ -197,7 +200,7 @@ public class AggressiveEnemy : MonoBehaviour
 
         ShowAttackVisual();
 
-        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, 0.5f, playerLayer);
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRange, playerLayer);
         if (hit != null)
         {
             PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
@@ -253,7 +256,7 @@ public class AggressiveEnemy : MonoBehaviour
         if (attackPoint != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, 0.5f);
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         }
 
         if (pointA != null && pointB != null)

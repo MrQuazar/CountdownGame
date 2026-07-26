@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7956704897995046212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3224881814598794584}
+  - component: {fileID: 2934683287452298856}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3224881814598794584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956704897995046212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2934683287452298856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956704897995046212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f314df28a72ed438895a51db9aac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuMusic: {fileID: 8300000, guid: 93be52c98c81d6b49a39b49c969394f0, type: 3}
+  gameMusicByScale:
+  - {fileID: 8300000, guid: ac4751551de67da428ed39a1750a3e24, type: 3}
+  - {fileID: 8300000, guid: a8516857e1965074091989f09a452a7f, type: 3}
+  - {fileID: 8300000, guid: efd9d5fd07a956d4f9d657cdb90b865f, type: 3}
+  musicCrossfadeDuration: 1.5
+  sfxLibrary:
+  - type: 0
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    volume: 0
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 1
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    volume: 0.1
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 2
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
+    volume: 0.2
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 3
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+    volume: 0.15
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 4
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+    volume: 0.3
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 5
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
+    volume: 0.5
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 6
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: aa174c7cf76bc0c4eb19318b3e6d1556, type: 3}
+    volume: 0.2
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 7
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
+    volume: 0.05
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 8
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
+    volume: 0.05
+    minPitch: 0.75
+    maxPitch: 0.95
+  - type: 9
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    volume: 0
+    minPitch: 0.5
+    maxPitch: 0.85
+  - type: 10
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    volume: 0
+    minPitch: 0.5
+    maxPitch: 0.9
+  - type: 11
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    volume: 0.01
+    minPitch: 0.5
+    maxPitch: 0.85
+  - type: 12
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+    volume: 0.5
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 17
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 5039414d94a6e4e70a5ab9e8833e992a, type: 3}
+    volume: 0.5
+    minPitch: 0.95
+    maxPitch: 1.05
+  - type: 16
+    enabled: 1
+    clips:
+    - {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    volume: 0.5
+    minPitch: 0.95
+    maxPitch: 1.05
+  oneShotPoolSize: 12
+  defaultMusicVolume: 1
+  defaultSFXVolume: 1
