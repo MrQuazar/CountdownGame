@@ -1005,9 +1005,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3162499199671338804, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5131486519360801402, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
       propertyPath: m_Name
       value: PauseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131486519360801402, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093650170560489418, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725801698807508665, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874436144429966936, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9491,6 +9511,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4143452751002082680, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 320849402}
+    - target: {fileID: 4143452751002082680, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
+      propertyPath: playerScale
+      value: 
+      objectReference: {fileID: 1309785253}
     - target: {fileID: 7209173169684621289, guid: cbf1842893cbc5d419b8a7253173eba2, type: 3}
       propertyPath: m_SortingOrder
       value: 9
@@ -10419,7 +10447,7 @@ PrefabInstance:
     - target: {fileID: 6832560485617515783, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
       propertyPath: bonusText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1026688578}
     - target: {fileID: 6832560485617515783, guid: c01be292f317d7a46bac65fedde44a5a, type: 3}
       propertyPath: timerText
       value: 
@@ -11853,6 +11881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 191981306364062538, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5147037291964900466, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12663,6 +12695,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+--- !u!114 &1026688578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5697893785917017151, guid: fe5b8790cdd0d6a4da04a26b9c95189b, type: 3}
+  m_PrefabInstance: {fileID: 1026688577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1033123658
 GameObject:
   m_ObjectHideFlags: 0
@@ -18724,6 +18767,26 @@ PrefabInstance:
     - target: {fileID: 2343834497995046518, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
       propertyPath: m_Name
       value: LoseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343834497995046518, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4213608898931865118, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 884684019}
+    - target: {fileID: 4213608898931865118, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844924691074380064, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 884684019}
+    - target: {fileID: 4844924691074380064, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 9098993340325601020, guid: 8582e479ad017f24494f98b0abe8a7d0, type: 3}
       propertyPath: m_Pivot.x
@@ -27853,7 +27916,7 @@ PrefabInstance:
     - target: {fileID: 4838382402422130196, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: loseScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1543587062}
     - target: {fileID: 5174088768586176347, guid: 3da2df1d3f54a284e9d77ebc84dfe2d9, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -27920,3 +27983,9 @@ SceneRoots:
   - {fileID: 946023509}
   - {fileID: 402576948}
   - {fileID: 944189595}
+  - {fileID: 1026688577}
+  - {fileID: 1543587061}
+  - {fileID: 120615189}
+  - {fileID: 884684018}
+  - {fileID: 816463621}
+  - {fileID: 965632188}
