@@ -2474,6 +2474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 191981306364062538, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5147037291964900466, guid: 79601172ce28cb247b70f5da6352bcbb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3400,23 +3404,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3162499199671338804, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5131486519360801402, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
       propertyPath: m_Name
       value: PauseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 5131486519360801402, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093650170560489418, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6725801698807508665, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8874436144429966936, guid: 2d8ee0fc97e7a60439c5b1472e245048, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
