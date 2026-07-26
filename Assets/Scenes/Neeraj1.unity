@@ -241,11 +241,11 @@ MonoBehaviour:
   target: {fileID: 912368902}
   smoothTime: 0.15
   offset: {x: 0, y: 1, z: -10}
-  useBounds: 0
-  minX: 5
-  maxX: 10
-  minY: 5
-  maxY: 10
+  useBounds: 1
+  minX: -31.1
+  maxX: 13.7
+  minY: -9.91
+  maxY: 12.48
 --- !u!114 &45278518
 MonoBehaviour:
   m_ObjectHideFlags: 0
